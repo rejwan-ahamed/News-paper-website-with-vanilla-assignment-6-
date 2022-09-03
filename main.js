@@ -84,7 +84,7 @@ const showNews = (data) => {
                     <img class="w-8 h-auto rounded-full"
                         src="${news.author.img}"
                         alt="" srcset="">
-                    <h4 class="font-mono text-sm font-bold">${news.author.name}</h4>
+                    <h4 class="font-mono text-sm font-bold">${news.author.name? news.author.name: 'No Name'}</h4>
                 </div>
 
                 <div class="author flex gap-1 items-center ">
@@ -96,7 +96,7 @@ const showNews = (data) => {
                             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
 
-                    <h4 class="font-mono text-sm font-bold">${news.total_view}</h4>
+                    <h4 class="font-mono text-sm font-bold">${news.total_view? news.total_view: 'No views'}</h4>
                 </div>
             </div>
         </div>
@@ -132,7 +132,10 @@ const showmodule = (id) => {
 }
 
 const modalData = (data) => {
-    
+
+    const modalParagraph = document.getElementById('news-modal-paragrapg');
+    modalParagraph.innerText = `${data.data[0].details}`;
+
 
     if (data) {
         module.classList.remove('hidden')
@@ -144,7 +147,7 @@ const modalData = (data) => {
 
 // close module 
 
-function closeButton(){
+function closeButton() {
     module.classList.add('hidden')
     console.log('button clicked')
 }
