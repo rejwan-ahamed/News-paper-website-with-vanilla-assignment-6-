@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- tailwind css here -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- flowbit here -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+
+    <title>Jonkar Express</title>
+</head>
+
+<body>
+
+    <main class="px-4 2xl:px-32 xl:px-32 lg:px-4">
+        <!-- nav bar start here -->
+        <section class="nav-main  ">
+            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 2xl:border-b-2 xl:border-b-2 lg:border-b-2 ">
+                <div class="container flex flex-wrap justify-between items-center mx-auto">
+                    <a href="https://flowbite.com/" class="flex items-center">
+                        <span
+                            class="self-center text-2xl font-semibold whitespace-nowrap font-mono text-blue-600">Jonker
+                            <span class="text-red-600">Express</span></span>
+                    </a>
+                    <button data-collapse-toggle="navbar-default" type="button"
+                        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+                        aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul
+                            class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+                            <li>
+                                <a href="index.html"
+                                    class="block py-2 pr-4 pl-3 text-white text-xl font-mono font-bold bg-gray-700 rounded md:bg-transparent md:text-gray-700 md:p-0 "
+                                    aria-current="page">News</a>
+                            </li>
+                            <li>
+                                <a href="blog.html"
+                                    class="block py-2 pr-4 pl-3 text-xl font-mono font-bold text-blue-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Blogs</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+
+        <!-- nav bar ends here -->
+
+        <!-- question ans section start here -->
+        <section class="question mt-16 mb-16">
+            <h1 class="font-mono font-bold text-xl mt-8">1. Difference between var, let and const </h1>
+            <p class="font-mono mt-8">In JavaScript, users can declare a variable using 3 keywords that are var, let,
+                and const. In this article, we will see the differences between the var, let, and const keywords. We
+                will discuss the scope and other required concepts about each keyword.</p>
+
+            <h1 class="font-mono font-bold text-xl mt-8">2. Difference between regular functions and arrow functions
+            </h1>
+            <p class="font-mono mt-8">This article discusses the major differences between the regular functions and the
+                arrow functions. Arrow functions – a new feature introduced in ES6 – enable writing concise functions in
+                JavaScript. While both regular and arrow functions work in a similar manner, yet there are certain
+                interesting differences between them, as discussed below
+            </p>
+
+            <h1 class="font-mono font-bold text-xl mt-8">3. Why we use Template strings </h1>
+            <p class="font-mono mt-8">Template strings are a powerful feature of modern JavaScript released in ES6. It
+                lets us insert/interpolate variables and expressions into strings without needing to concatenate like in
+                older versions of JavaScript. It allows us to create strings that are complex and contain dynamic
+                elements. Another great thing that comes with template strings are tags. Tags are functions that take a
+                string and the decomposed parts of the string as parameters and are great for converting strings to
+                different entities.</p>
+
+            <h1 class="font-mono font-bold text-xl mt-8">4. Difference of .map, .forEach, .filter, .find </h1>
+            <p class="font-mono mt-8">Many posts discuss how to use .forEach(), .map(), .filter(), .reduce() and .find()
+                on arrays in JavaScript. I thought it would be useful to provide an explanation of when to use the
+                common array methods.</p>
+        </section>
+        <!-- question ans section end here -->
+
+
+
+
+    </main>
+
+    <!-- modal ends here -->
+
+    <!-- footer start here -->
+
+    <footer class="p-4 bg-blue-300 mt-8 shadow md:flex md:items-center md:justify-between md:p-6">
+        <span class="font-mono font-bold text-sm text-black sm:text-center">© 2022 <a href="https://flowbite.com/"
+                class="hover:underline">Jonkar Express</a>. All Rights Reserved.
+        </span>
+        <ul class="font-mono font-bold flex flex-wrap items-center mt-3 text-sm text-black sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- footer end here -->
+
+
+
+    <!-- flowbite js here -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+    <!-- Main js part here -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

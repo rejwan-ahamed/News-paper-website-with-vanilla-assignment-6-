@@ -53,16 +53,23 @@ const loadNewsData = (searchCategory) => {
 
 const newsCards = document.getElementById('newsCards')
 const newsNumbers = document.getElementById('resultNumber')
+const notfound = document.getElementById('notfound')
 
 const showNews = (data) => {
 
     // show news numbers
     if (data.length == 0) {
         newsNumbers.innerText = "Jonkar Vhai dose not post any news on this topic."
+        notfound.classList.remove('hidden')
         spinner(false)
     } else {
         newsNumbers.innerText = `${data.length} results found`
+        notfound.classList.add('hidden')
     }
+
+    data.sort((a, b) => {
+        return b.total_view - a.total_view;
+        });
 
     newsCards.innerHTML = ''
     data.forEach(news => {
