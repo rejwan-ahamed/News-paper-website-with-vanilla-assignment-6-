@@ -70,7 +70,7 @@ const showNews = (data) => {
         const newsCard = document.createElement('div')
         newsCard.innerHTML = `
         <a href="#"
-        class="mb-4 2xl:max-w-2xl 2xl:mb-0 xl:mb-0 lg:mb-0 mx-auto flex flex-col items-center bg-white rounded-lg border shadow-md w-fit md:flex-row md:max-w-xl hover:bg-gray-100 " onclick="newsDataLoad(showNewsData)">
+        class="mb-4 2xl:max-w-2xl 2xl:mb-0 xl:mb-0 lg:mb-0 mx-auto flex flex-col items-center bg-white rounded-lg border shadow-md w-fit md:flex-row md:max-w-xl hover:bg-gray-100"  onclick="showmodule('${news._id}')">
         <img class="object-cover w-60 2xl:w-60 h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
             src="${news.thumbnail_url}"
             alt="">
@@ -114,12 +114,41 @@ const showNews = (data) => {
 const spinner = showSpinner => {
     const spinner = document.getElementById('spinner');
     if (showSpinner == true) {
-      spinner.classList.remove('hidden')
+        spinner.classList.remove('hidden')
     } else {
-      spinner.classList.add('hidden')
+        spinner.classList.add('hidden')
     }
-  }
-  
+}
+
+
+
+// show modal
+const module = document.getElementById('main-module');
+const showmodule = (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => modalData(data))
+}
+
+const modalData = (data) => {
+    
+
+    if (data) {
+        module.classList.remove('hidden')
+    } else {
+        module.classList.add('hidden')
+    }
+    console.log(data)
+}
+
+// close module 
+
+function closeButton(){
+    module.classList.add('hidden')
+    console.log('button clicked')
+}
+
 
 // this function called for load data in category in the API
 
