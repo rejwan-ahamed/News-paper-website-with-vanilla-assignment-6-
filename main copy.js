@@ -30,7 +30,7 @@ const showNewsCategory = (newses) => {
 
 // click to show category 
 
-const categoryNews = (newsData) => {
+function categoryNews(newsData) {
     console.log(newsData)
     let r = loadNewsData('0' + newsData)
     spinner(true)
@@ -69,7 +69,7 @@ const showNews = (data) => {
 
     data.sort((a, b) => {
         return b.total_view - a.total_view;
-    });
+        });
 
     newsCards.innerHTML = ''
     data.forEach(news => {
@@ -82,8 +82,8 @@ const showNews = (data) => {
             src="${news.thumbnail_url}"
             alt="">
         <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "> ${news.title.length<30? news.title : news.title.slice(0,60)+ '...'}</h5>
-            <p class="mb-3 font-normal text-gray-700 ">${news.details.length<100? news.details : news.details.slice(0,100)+ '...'}</p>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 "> ${news.title.slice(0,100)+ '...'}</h5>
+            <p class="mb-3 font-normal text-gray-700 ">${news.details.slice(0,150)+ '...'}</p>
 
 
             <div class="main-author-section flex justify-between 2xl:px-4">
@@ -142,8 +142,6 @@ const showmodule = (id) => {
 const modalData = (data) => {
 
     const modalParagraph = document.getElementById('news-modal-paragrapg');
-    const modalPostHeader = document.getElementById('post-header')
-    modalPostHeader.innerText=`${data.data[0].title}`
     modalParagraph.innerText = `${data.data[0].details}`;
 
 
@@ -157,7 +155,7 @@ const modalData = (data) => {
 
 // close module 
 
-const closeButton=()=> {
+function closeButton() {
     module.classList.add('hidden')
     console.log('button clicked')
 }
