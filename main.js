@@ -71,7 +71,7 @@ const showNews = (data) => {
         newsCard.innerHTML = `
         <a href="#"
         class="mb-4 2xl:max-w-2xl 2xl:mb-0 xl:mb-0 lg:mb-0 mx-auto flex flex-col items-center bg-white rounded-lg border shadow-md w-fit md:flex-row md:max-w-xl hover:bg-gray-100"  onclick="showmodule('${news._id}')">
-        <img class="object-cover w-60 2xl:w-60 h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        <img class="object-cover  w-6xl 2xl:w-60 h-96 rounded-t-lg md:h-auto md:w-2xl md:rounded-none md:rounded-l-lg"
             src="${news.thumbnail_url}"
             alt="">
         <div class="flex flex-col justify-between p-4 leading-normal">
@@ -82,7 +82,7 @@ const showNews = (data) => {
             <div class="main-author-section flex justify-between 2xl:px-4">
                 <div class="author flex gap-1 items-center ">
                     <img class="w-8 h-auto rounded-full"
-                        src="${news.author.img}"
+                        src="${news.author.img? news.author.img: 'No image'}"
                         alt="" srcset="">
                     <h4 class="font-mono text-sm font-bold">${news.author.name? news.author.name: 'No Name'}</h4>
                 </div>
@@ -129,6 +129,7 @@ const showmodule = (id) => {
     fetch(url)
         .then(res => res.json())
         .then(data => modalData(data))
+        .catch(error => console.log(error))
 }
 
 const modalData = (data) => {
